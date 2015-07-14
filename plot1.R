@@ -4,6 +4,7 @@ subsetdata <- subset(rawdata,rawdata$Date == "2007-02-01" | rawdata$Date == "200
 rm(rawdata)
 subsetdata$DateTime <- strptime(paste(subsetdata$Date,subsetdata$Time, sep = " "), "%Y-%m-%d %H:%M:%S")
 
+par(mfrow = c(1, 1))
 hist(subsetdata$Global_active_power, main = "Global Active Power",col = "red", xlab = "Global Active Power (kilowatts)")
 dev.copy(png, file = "plot1.png", width = 480, height = 480)
 dev.off()
