@@ -4,7 +4,7 @@ subsetdata <- subset(rawdata,rawdata$Date == "2007-02-01" | rawdata$Date == "200
 rm(rawdata)
 subsetdata$DateTime <- strptime(paste(subsetdata$Date,subsetdata$Time, sep = " "), "%Y-%m-%d %H:%M:%S")
 
-par(mfrow = c(1, 1))
+par(mfrow = c(1, 1), mar = c(4, 3, 1, 0))
 with(subsetdata, {
     plot(DateTime, Sub_metering_1, type = "l", xlab = "", ylab = "Energy sub metering")
     lines(DateTime, Sub_metering_2, col = "red")
